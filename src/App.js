@@ -16,6 +16,10 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
+          안녕하세요
+          반갑습니다
+          볼룸추가되었습니다.
+          마지막 추가!!!
         </a>
       </header>
     </div>

@@ -6,7 +6,7 @@ services:
 	- docker # sevices : 도커 환경 구성하기
     
 before_install: # before_install : 스크립트 실행할 수 있는 환경 구성
-	- echo "start Creating an image with dockerfile" 
+	- echo "start creating an image with dockerfile" 
   - docker build -t dldbwls492/docker-react-app6 -f Dockerfile.dev .  # 도커파일로 이미지 생성하기
     
 script: # script : 테스트 실행할 스크립트

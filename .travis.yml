@@ -1,17 +1,16 @@
 sudo: required  # sudo : 관리자 권한 갖기
 
 language: generic # language : 언어(플랫폼) 선택
-           # 언어는 node 또는 ptyhon 등으로 선택 가능 
+
 services:
-	- docker # sevices : 도커 환경 구성하기
+  - docker # sevices : 도커 환경 구성하기
     
 before_install: # before_install : 스크립트 실행할 수 있는 환경 구성
-	- echo "start creating an image with dockerfile" 
+  - echo "start creating an image with dockerfile" 
   - docker build -t dldbwls492/docker-react-app6 -f Dockerfile.dev .  # 도커파일로 이미지 생성하기
     
 script: # script : 테스트 실행할 스크립트
-	- docker run -e CI=true dldbwls492/docker-react-app6 npm run test -- --coverage
+  - docker run -e CI=true dldbwls492/docker-react-app6 npm run test -- --coverage
    
 after_success: # after_success : 테스트 성공 후 할일
-	- echo "Test Success"
-
+  - echo "Test Success"

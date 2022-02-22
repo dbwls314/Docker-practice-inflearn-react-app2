@@ -15,5 +15,7 @@ RUN npm run build
 # run stage
 FROM nginx
 
+EXPOSE 80
+
 COPY --from=builder /usr/src/app/build /usr/share/nginx/html
                     # 지금 workdir 파일 위치   # workdir가 사용할수잇는 폴더위치

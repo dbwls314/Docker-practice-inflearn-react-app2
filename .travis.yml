@@ -21,7 +21,7 @@ deply:
   bucket_name: "elasticbeanstalk-ap-northeast-2-271153756890" # s3 버킷 이름?
   bucket_path: "elasticbeanstalk-ap-northeast-2-271153756890"
   on:
-    branch: master
+    branch: main
 # access key와 scret access key를 작성하는 이유
 # : Travis CI 파일에서 AWS의 파일을 access 할 수 있다.
 access_key_id: $AWS_access_key

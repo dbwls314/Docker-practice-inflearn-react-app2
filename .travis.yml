@@ -24,8 +24,8 @@ deply:
     branch: main
 # access key와 scret access key를 작성하는 이유
 # : Travis CI 파일에서 AWS의 파일을 access 할 수 있다.
-access_key_id: $AWS_access_key
-secret_access_key: $AWS_secret_access_key
+  access_key_id: $AWS_access_key
+  secret_access_key: $AWS_secret_access_key
 
 after_success: # after_success : 테스트 성공 후 할일
   - echo "Test Success"

@@ -11,6 +11,21 @@ before_install: # before_install : 스크립트 실행할 수 있는 환경 구�
     
 script: # script : 테스트 실행할 스크립트
   - docker run -e CI=true dldbwls492/docker-react-app6 npm run test -- --coverage
-   
+
+# AWS 배포를 위한 코드 추가필요
+deply:
+  provider: elasticbeanstalk
+  resion: "ap-northeast-2"
+  app: "docker-react-app"
+  env: "Dockerreactapp-env"
+  bucket_name: "elasticbeanstalk-ap-northeast-2-271153756890" # s3 버킷 이름?
+  bucket_path: "elasticbeanstalk-ap-northeast-2-271153756890"
+  on:
+    branch: master
+# access key와 scret access key를 작성하는 이유
+# : Travis CI 파일에서 AWS의 파일을 access 할 수 있다.
+access_key_id: $AWS_access_key
+secret_access_key: $AWS_secret_access_key
+
 after_success: # after_success : 테스트 성공 후 할일
   - echo "Test Success"
